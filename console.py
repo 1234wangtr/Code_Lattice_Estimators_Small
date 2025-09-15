@@ -37,42 +37,42 @@ def main():
         t = int(re.findall(r"\d+", sys.argv[3]).pop())
 
         if len(sys.argv) == 5 and 'x' in sys.argv[-1]:
-            print("bit security of dual exact LPN (n=" + str(n) + ", N=" + str(N) + ", t=" + str(t) + "):")
+            print("bit security of dual exact LPN (n=" + str(n) + ", N=" + str(N) + ", t=" + str(t) + "):",end='')
             res = analysisfordual2(n, N, t)
             res = round(res)
             print(res)
-            print(f"quantum security is:\n{res // 2}")
+            print(f"quantum security is:{res // 2}")
             # print(analysisfordual2(n, N, t))
             # print()
 
         elif len(sys.argv) == 5 and 'r' in sys.argv[-1]:
-            print("bit security of dual regular LPN (n=" + str(n) + ", N=" + str(N) + ", t=" + str(t) + "):")
+            print("bit security of dual regular LPN (n=" + str(n) + ", N=" + str(N) + ", t=" + str(t) + "):",end='')
             res = analysisfordual2regular(n, N, t)
             res = round(res)
             print(res)
-            print(f"quantum security is:\n{res // 2}")
+            print(f"quantum security is:{res // 2}")
             # print(analysisfordual2regular(n, N, t))
             # print()
 
         elif 'q' in sys.argv[-2] and 'x' in sys.argv[-1]:
             q = int(re.findall(r"\d+", sys.argv[-2]).pop())
             print("bit security of dual exact LPN (n=" + str(n) + ", N=" + str(N) + ", t=" + str(t) + ", q=" + str(
-                q) + "):")
+                q) + "):",end='')
             res = analysisfordualq(n, N, t, q)
             res = round(res)
             print(res)
-            print(f"quantum security is:\n{res // 2}")
+            print(f"quantum security is:{res // 2}")
             # print(analysisfordualq(n, N, t, q))
             # print()
 
         elif 'q' in sys.argv[-2] and 'r' in sys.argv[-1]:
             q = int(re.findall(r"\d+", sys.argv[-2]).pop())
             print(
-                "bit security of regular LPN (n=" + str(n) + ", N=" + str(N) + ", t=" + str(t) + ", q=" + str(q) + "):")
+                "bit security of regular LPN (n=" + str(n) + ", N=" + str(N) + ", t=" + str(t) + ", q=" + str(q) + "):",end='')
             res = analysisfordualqregular(n, N, t, q)
             res = round(res)
             print(res)
-            print(f"quantum security is:\n{res // 2}")
+            print(f"quantum security is:{res // 2}")
             # print(analysisfordualqregular(n, N, t, q))
             # print()
 
@@ -86,41 +86,41 @@ def main():
         t = int(re.findall(r"\d+", sys.argv[3]).pop())
 
         if len(sys.argv) == 5 and 'x' in sys.argv[-1]:
-            print("bit security of exact LPN (N=" + str(N) + ", k=" + str(k) + ", t=" + str(t) + "):")
+            print("bit security of exact LPN (N=" + str(N) + ", k=" + str(k) + ", t=" + str(t) + "):",end='')
             res = analysisfor2(N, k, t)
             res = round(res)
             print(res)
-            print(f"quantum security is:\n{res // 2}")
+            print(f"quantum security is:{res // 2}")
             # print(analysisfor2(N, k, t))
             # print()
 
         elif len(sys.argv) == 5 and 'r' in sys.argv[-1]:
-            print("bit security of regular LPN (N=" + str(N) + ", k=" + str(k) + ", t=" + str(t) + "):")
+            print("bit security of regular LPN (N=" + str(N) + ", k=" + str(k) + ", t=" + str(t) + "):",end='')
             res = analysisfor2regular(N, k, t)
             res = round(res)
             print(res)
-            print(f"quantum security is:\n{res // 2}")
+            print(f"quantum security is:{res // 2}")
             # print(analysisfor2regular(N, k, t))
             # print()
 
         elif 'q' in sys.argv[-2] and 'x' in sys.argv[-1]:
             q = int(re.findall(r"\d+", sys.argv[-2]).pop())
             print("bit security of exact LPN (N=" + str(N) + ", k=" + str(k) + ", t=" + str(t) + ", q=" + str(
-                q) + "):")
+                q) + "):",end='')
             res = analysisforq(N, k, t, q)
             res = round(res)
             print(res)
-            print(f"quantum security is:\n{res//2}")
+            print(f"quantum security is:{res//2}")
 
 
         elif 'q' in sys.argv[-2] and 'r' in sys.argv[-1]:
             q = int(re.findall(r"\d+", sys.argv[-2]).pop())
             print("bit security of regular LPN (N=" + str(N) + ", k=" + str(k) + ", t=" + str(t) + ", q=" + str(
-                q) + "):")
+                q) + "):",end='')
             res = analysisforqregular(N, k, t, q)
             res = round(res)
             print(res)
-            print(f"quantum security is:\n{res//2}")
+            print(f"quantum security is:{res//2}")
             print()
 
         else:
@@ -134,9 +134,9 @@ def main():
         m = int(re.findall(r"\d+", sys.argv[5]).pop())
         res = analysisforrank(n,k,t,q,m)
         res = round(res)
-        print("bit security of rank SD (n=" + str(n) + ", k=" + str(k) + ", t=" + str(t) + ", q=" + str(q) + ", m=" + str(m) +  "):")
+        print("bit security of rank SD (n=" + str(n) + ", k=" + str(k) + ", t=" + str(t) + ", q=" + str(q) + ", m=" + str(m) +  "):",end='')
         print(res)
-        print(f"quantum security is:\n{res//2}")
+        print(f"quantum security is:{res//2}")
         print()
 
     elif 'n' in sys.argv[1] and 'q' in sys.argv[2] and 'b' in sys.argv[3]:
@@ -146,9 +146,9 @@ def main():
         res = analysisforsis(n,q,b)
         classic = round(res["classical_equiv"])
         quant = round(res['quantum_equiv'])
-        print("bit security of SIS:")
-        print(classic)
-        print(f"quantum security is:\n{quant}")
+        print(f"bit security of SIS:{classic}")
+        # print(classic)
+        print(f"quantum security is:{quant}")
         print()
 
 

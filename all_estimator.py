@@ -25,11 +25,11 @@ from sis.sis_estimator import *
 def analysisfor2(N, k, t):
     # LWYY
     T1 = Gauss(N, k, t)
-    print(f"Gauss={T1}")
+    # print(f"Gauss={T1}")
     T2 = SD_ISD(N, k, t)
-    print(f"SDISD={T2}")
+    # print(f"SDISD={T2}")
     T3 = BJMM_ISD(N, k, t)
-    print(f"BJMM={T3}")
+    # print(f"BJMM={T3}")
 
 
     return min(T1, T2, T3)
@@ -43,7 +43,7 @@ def analysisfor2regular(N, k, t):
 
 
     # dbg
-    print(f"ISD={T1}")
+    # print(f"ISD={T1}")
 
     return T1
 
